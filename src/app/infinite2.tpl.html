@@ -1,0 +1,49 @@
+<h1 class='pagetitle'>Infinite Scroll test</h1>
+<div style="position:fixed;background-color: white;border: 4px dotted red;right:200px;width:300px;top:50px;padding:10px;color:#770000;"
+     ng-show="params.debugPaging">
+    Window-Top: {{viewport.windowTop}}<br>
+    Window-Bottom: {{viewport.windowBottom}}<br>
+    tableTop: {{table.top}}<br>
+    tableHeight: {{table.height}}<br>
+    prevPageNum: {{paging.prevPageNum}}<br>
+    prevPageOffset: {{paging.prevPageOffset}}<br>
+    postTableSpacerHeight: {{paging.postTableSpacerHeight}}<br>
+    params.lineHeight: {{params.lineHeight}}<br>
+    busy: {{busy}}<br>
+</div>
+<div>
+    <table id="t">
+        <tr style="height: {{params.lineHeight}}px;">
+            <th>test</th>
+            <th style="height:{{lineheight}}px;padding:6px;margin:0;" ng-show="params.debugPaging">Page</th>
+        </tr>
+
+        <tr ng-show="paging.prevPageOffset > 0" style="height:{{paging.prevPageOffset}}px;">
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr ng-repeat="d in prevPage.data" style="height: {{params.lineHeight}}px;" ng-style="prevPageStyle">
+            <td>{{d.row}}</td>
+            <td style="height:{{lineheight}}px;padding:6px;margin:0;" ng-show="params.debugPaging">[Prev] &rarr;
+                {{prevPage.pageNum}}
+            </td>
+        </tr>
+        <tr ng-repeat="d in mainPage.data" style="height: {{params.lineHeight}}px;" ng-style="mainPageStyle">
+            <td>{{d.row}}</td>
+            <td style="height:{{lineheight}}px;padding:6px;margin:0;" ng-show="params.debugPaging">[Main] &rarr;
+                {{mainPage.pageNum}}
+            </td>
+        </tr>
+        <tr ng-repeat="d in nextPage.data" style="height: {{params.lineHeight}}px;" ng-style="nextPageStyle">
+            <td>{{d.row}}</td>
+            <td style="height:{{lineheight}}px;padding:6px;margin:0;" ng-show="params.debugPaging">[Next] &rarr;
+                {{nextPage.pageNum}}
+            </td>
+        </tr>
+    </table>
+
+    <div ng-show="paging.postTableSpacerHeight > 0">
+        <img src="images/1x1.png" height="{{paging.postTableSpacerHeight}}" width="1" alt="spacer"/><br>
+        &nbsp;
+    </div>
+</div>
