@@ -11,7 +11,7 @@ angular.module('infinite')
             debugPaging: true,
 
             recalcParams: function () {
-                this.numRowsPerPage = Math.floor($window.innerHeight() / this.lineHeight) * 3;
+                this.numRowsPerPage = Math.floor($window.innerHeight / this.lineHeight) * 3;
                 this.maxPageNum = Math.floor(this.numTotalRows / this.numRowsPerPage) - 1;
             }
         };
@@ -25,11 +25,11 @@ angular.module('infinite')
 
         $scope.viewport = {
             windowTop: 0,
-            windowBottom: $window.innerHeight(),
+            windowBottom: $window.innerHeight,
 
             readViewportInfo: function () {
-                this.windowTop = $window.scrollTop();
-                this.windowBottom = $window.innerHeight() + $window.scrollTop();
+                this.windowTop = $window.scrollTop;
+                this.windowBottom = $window.innerHeight + $window.scrollTop;
             }
         };
         $scope.viewport.readViewportInfo();
