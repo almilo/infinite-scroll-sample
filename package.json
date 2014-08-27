@@ -1,0 +1,8 @@
+{
+    "name": "infiniite-scroll",
+    "version": "1.0.0",
+    "devDependencies": {
+        "body-parser": "1.0.2",
+        "express": "4.1.1"
+    }
+}

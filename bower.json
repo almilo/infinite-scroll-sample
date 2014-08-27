@@ -11,7 +11,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.2.23",
-    "angular-route": "~1.2.23"
+    "angular": "1.2.15",
+    "jquery": "~1.11.0",
+    "angular-route": "1.2.15"
   }
 }

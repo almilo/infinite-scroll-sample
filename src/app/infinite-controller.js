@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('infinite')
-    .controller('InfiniteCtrl2', function ($scope, $timeout, $window, $q) {
+    .controller('InfiniteCtrl', function ($scope, $timeout, $window, $q) {
 
         $window = angular.element($window);
 
         $scope.params = {
             lineHeight: 36,
-            numTotalRows: 300000,
+            numTotalRows: 10000,
             debugPaging: true,
 
             recalcParams: function () {

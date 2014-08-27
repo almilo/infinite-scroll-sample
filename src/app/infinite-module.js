@@ -3,11 +3,11 @@
 angular.module('infinite', ['ngRoute'])
     .config(function ($routeProvider) {
         $routeProvider
-            .when('/infinite2', {
-                templateUrl: 'infinite2.tpl.html',
-                controller: 'InfiniteCtrl2'
+            .when('/infinite', {
+                templateUrl: 'infinite.tpl.html',
+                controller: 'InfiniteCtrl'
             })
             .otherwise({
-                redirectTo: '/infinite2'
+                redirectTo: '/infinite'
             });
     });
